@@ -83,12 +83,12 @@ STM32 board's LEDs can be used to monitor the transfer status:
 
 @Note If the  application is using the DTCM/ITCM memories (@0x20000000/ 0x0000000: not cacheable and only accessible
       by the Cortex M7 and the  MDMA), no need for cache maintenance when the Cortex M7 and the MDMA access these RAMs.
-      If the application needs to use DMA(or other masters) based access or requires more RAM, then  the user has to:
-              - Use a non TCM SRAM. (example : D1 AXI-SRAM @ 0x24000000)
-              - Add a cache maintenance mechanism to ensure the cache coherence between CPU and other masters(DMAs,DMA2D,LTDC,MDMA).
-              - The addresses and the size of cacheable buffers (shared between CPU and other masters)
+    ?If the application needs to use DMA(or other masters) based access or requires more RAM, then  the user has to:
+          ??- Use a non TCM SRAM. (example : D1 AXI-SRAM @ 0x24000000)
+          ??- Add a cache maintenance mechanism to ensure the cache coherence between CPU and other masters(DMAs,DMA2D,LTDC,MDMA).
+      ?      - The addresses and the size of cacheable buffers (shared between CPU and other masters)
                 must be	properly defined to be aligned to L1-CACHE line size (32 bytes). 
- 
+?
 @Note It is recommended to enable the cache and maintain its coherence.
       Depending on the use case it is also possible to configure the cache attributes using the MPU.
       Please refer to the AN4838 "Managing memory protection unit (MPU) in STM32 MCUs"
@@ -129,3 +129,6 @@ In order to make the program work, you must do the following :
 
  * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
  */
+
+
+
